@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Form Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!-- card que engloba todo -->
+    <div class="card d-flex border border-1 m-5 p-1">
+        <!-- header con el titulo-->
+      <div class="card-header">
+        <h4 class="d-flex">Payment Form Example</h4>
+      </div>
+        <!-- card body -->
+      <div class="card-body">
+        <!-- Alert -->
+        <div class="alert alert-danger" role="alert">
+          Some fields are missing or wrong!
+        </div>
+
+        <!-- Primera fila de card cvc y amount -->
+          <form>
+            <div class="d-flex gap-2">
+                <!-- Credit card -->
+              <div class="col-5">
+                <label for="creditCard" class="form-label"
+                  >Card #</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="creditCard"
+                  placeholder="xxxx-xxxx-xxxx-xxxx"
+                  pattern="[0-9]{16}"
+                  required
+                />
+              </div>
+              <!-- CVC -->
+              <div class="col-4">
+                <label for="CVC" class="form-label">CVC #</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="CVC"
+                  placeholder="000"
+                  pattern="[0-9]{3}"
+                  required
+                />
+              </div>
+              <!-- Amount -->
+              <div class="col-3">
+                <label for="Amount" class="form-label"
+                  >Amount</label
+                >
+                <div class="d-flex">
+                  $<input
+                    type="text"
+                    class="form-control"
+                    id="Amount"
+                    placeholder="Amount"
+                    pattern="[0-9]{}"
+                    required
+                    />
+                </div>
+              </div>
+            </div>
+          </form> 
+          <!-- fin primera fila -->
+          <!-- gran div padre que engloba grandes div izq y der -->
+          <div class="d-flex col-12 gap-1">
+          <!--  gran div izquierda con first name city y tipos de tarjeta en filas-->
+          <div class="col-6">
+            <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">City</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Insert your city">
+          </div>
+        
+          
+          <!-- tipos tarjeta -->
+          <div class="bg-secondary col-6 rounded">
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1"><i class="fa-brands fa-cc-visa" style="color: #f1f5f9;"></i></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2"><i class="fa-brands fa-cc-mastercard" style="color: #f1f5f9;"></i></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3"><i class="fa-brands fa-cc-amazon-pay" style="color: #f1f5f9;"></i></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+            <label class="form-check-label" for="inlineRadio4"><i class="fa-brands fa-cc-discover" style="color: #f1f5f9;"></i></label>
+          </div>
+        </div>
+        
+
+        </div>
+
+          <!-- segundo gran div con last name, subdiv con state y postal code y message -->
+          
+          <div class="col-6 ">
+          <!-- last name -->
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput">
+          </div>
+                
+                <!-- div con state y postal code en d-flex -->
+                <div class="d-flex gap-1">
+                    <!-- state -->
+                    <div class="col-6">
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Pick a state</option>
+                          <option>Spain</option>
+                          <option>France</option>
+
+                        </select>
+                    </div>
+
+                    <!-- postal code -->
+                    <div class="col-6 ">
+                        <label for="inputAddress" class="form-label">Postal Code</label>
+                        <input type="text" class="form-control flex-grow-1" id="inputAddress" placeholder="00000">
+                    </div>
+                </div>
+
+                    <!-- message -->
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <small class="text-muted">Add any notes here.</small>
+                    
+                    </div>
+                <!-- fin gran div -->
+            </div> 
+        
+
+      </div>
+    </div>
+
+      <div class="card-footer text-end">
+        <button type="button" class="btn btn-secondary">Cancel</button>
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
