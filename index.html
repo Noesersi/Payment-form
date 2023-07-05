@@ -22,6 +22,7 @@
 
   <body>
     <!-- card que engloba todo -->
+    <form>
     <div class="card d-flex border border-1 m-5 p-1">
         <!-- header con el titulo-->
       <div class="card-header">
@@ -35,7 +36,7 @@
         </div>
 
         <!-- Primera fila de card cvc y amount -->
-          <form>
+          
             <div class="d-flex gap-2">
                 <!-- Credit card -->
               <div class="col-5">
@@ -47,6 +48,8 @@
                   id="creditCard"
                   placeholder="xxxx-xxxx-xxxx-xxxx"
                   pattern="[0-9]{16}"
+                  minlength="16"
+                  maxlength="16"
                   required
                 />
               </div>
@@ -59,6 +62,8 @@
                   id="CVC"
                   placeholder="000"
                   pattern="[0-9]{3}"
+                  maxlength="3"
+                  minlength="3"
                   required
                 />
               </div>
@@ -73,13 +78,13 @@
                     class="form-control"
                     id="Amount"
                     placeholder="Amount"
-                    pattern="[0-9]{}"
+                    pattern="[0-9]+"
                     required
                     />
                 </div>
               </div>
             </div>
-          </form> 
+           
           <!-- fin primera fila -->
           <!-- gran div padre que engloba grandes div izq y der -->
           <div class="d-flex col-12 gap-1">
@@ -87,18 +92,18 @@
           <div class="col-6">
             <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="formGroupExampleInput">
+            <input type="text" class="form-control" id="formGroupExampleInput" required>
           </div>
           <div class="mb-3">
             <label for="formGroupExampleInput2" class="form-label">City</label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Insert your city">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Insert your city" required>
           </div>
         
           
           <!-- tipos tarjeta -->
           <div class="bg-secondary col-6 rounded">
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
             <label class="form-check-label" for="inlineRadio1"><i class="fa-brands fa-cc-visa" style="color: #f1f5f9;"></i></label>
           </div>
           <div class="form-check form-check-inline">
@@ -124,7 +129,7 @@
           <!-- last name -->
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="formGroupExampleInput">
+            <input type="text" class="form-control" id="formGroupExampleInput" required>
           </div>
                 
                 <!-- div con state y postal code en d-flex -->
@@ -132,7 +137,7 @@
                     <!-- state -->
                     <div class="col-6">
                         <label for="inputState" class="form-label">State</label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" required>
                           <option selected>Pick a state</option>
                           <option>Spain</option>
                           <option>France</option>
@@ -143,7 +148,10 @@
                     <!-- postal code -->
                     <div class="col-6 ">
                         <label for="inputAddress" class="form-label">Postal Code</label>
-                        <input type="text" class="form-control flex-grow-1" id="inputAddress" placeholder="00000">
+                        <input type="text" class="form-control flex-grow-1" id="inputAddress" placeholder="00000" pattern="[0-9]"
+                        minlength="5"
+                        maxlength="5"
+                        required>
                     </div>
                 </div>
 
@@ -165,7 +173,7 @@
         <button type="button" class="btn btn-secondary">Cancel</button>
         <button type="button" class="btn btn-primary">Send</button>
       </div>
-
+    </form>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
